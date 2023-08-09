@@ -7,12 +7,14 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class BlogsPageTests extends TestBase {
     @Test
-    @DisplayName("Missed password authorization")
+    @DisplayName("Use filter by Name")
     void missedPasswordLoginTest() {
         open("https://render.ru");
         sidebarPage
                 .openSidebar()
                 .openBlogsPage()
-                .openFiltersAndSearch();
+                .openFiltersAndSearch()
+                .setValueInFilterByName("Август 2023")
+                .checkBlogInList("Август 2023");
     }
 }
