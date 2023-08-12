@@ -18,8 +18,8 @@ public class LoginTests extends TestBase {
         sidebarPage
                 .openSidebar()
                 .openLoginWindow()
-                .setEmail("wolic45238@mliok.com")
-                .setPassword("fcff612052dd4fe6")
+                .setEmail(accountData.getEmail())
+                .setPassword(accountData.getPassword())
                 .clickSubmitButton()
                 .openUserDropdownMenu()
                 .checkUserName("testUser testUser");

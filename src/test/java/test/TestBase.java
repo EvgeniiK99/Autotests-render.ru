@@ -3,6 +3,7 @@ package test;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 
+import config.AccountData;
 import config.WebDriverConfig;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -22,6 +23,7 @@ public class TestBase {
 
     SidebarPage sidebarPage = new SidebarPage();
     static WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
+    static AccountData accountData = ConfigFactory.create(AccountData.class, System.getProperties());
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = config.getBaseUrl();

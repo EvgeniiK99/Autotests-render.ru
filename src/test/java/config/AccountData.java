@@ -1,8 +1,9 @@
 package config;
 
-import static org.aeonbits.owner.Config.*;
+import org.aeonbits.owner.Config;
 
-public interface AccountData {
+@Config.Sources({"classpath:data.properties"})
+public interface AccountData extends Config {
     @Key("email")
     String getEmail();
     @Key("password")
