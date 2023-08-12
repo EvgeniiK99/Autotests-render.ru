@@ -1,6 +1,5 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
@@ -16,21 +15,25 @@ public class SidebarPage {
             blogsMenu = $(byText("БЛОГИ")),
             languageMenu = $(".menu__lang");
 
+    @Step("Open sidebar")
     public SidebarPage openSidebar() {
         sidebar.hover();
         return this;
     }
 
+    @Step("Open login window")
     public LoginPage openLoginWindow() {
         userMenu.click();
         return new LoginPage();
     }
 
+    @Step("Open user dropdown menu")
     public SidebarPage openUserDropdownMenu() {
         userMenu.click();
         return this;
     }
 
+    @Step("Open blogs page")
     public BlogsPage openBlogsPage() {
         blogsMenu.click();
         return new BlogsPage();
@@ -43,7 +46,7 @@ public class SidebarPage {
         return this;
     }
 
-
+    @Step("Check user name")
     public SidebarPage checkUserName(String userName) {
         sidebar.$(byText(userName)).shouldBe(visible);
         return this;

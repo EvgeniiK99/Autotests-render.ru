@@ -6,6 +6,7 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class BlogsPage extends SidebarPage {
     SelenideElement
@@ -15,6 +16,11 @@ public class BlogsPage extends SidebarPage {
 
 
 
+    @Step("Open Blogs page")
+    public BlogsPage openBlogsPage() {
+        open("/section");
+        return this;
+    }
     @Step("Open filters")
     public BlogsPage openFiltersAndSearch() {
         filterButton.click();
