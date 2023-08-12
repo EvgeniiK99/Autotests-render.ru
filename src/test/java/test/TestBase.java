@@ -16,6 +16,7 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
+        Configuration.baseUrl = "https://render.ru/ru";
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
 //        Configuration.holdBrowserOpen = true;
