@@ -15,6 +15,7 @@ public class BlogsPageTests extends TestBase {
                 .openBlogsPage()
                 .openFiltersAndSearch()
                 .setValueInFilterByName("Август 2023")
+                .closeFiltersAndSearch()
                 .checkBlogInList("Август 2023");
     }
 }
