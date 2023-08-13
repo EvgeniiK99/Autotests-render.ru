@@ -8,7 +8,6 @@ import config.WebDriverConfig;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 
-import io.restassured.RestAssured;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -43,7 +42,7 @@ public class TestBase {
             ));
             Configuration.browserCapabilities = capabilities;
         }
-                Configuration.holdBrowserOpen = true;
+//        Configuration.holdBrowserOpen = true;
     }
     @BeforeEach
     void beforeEach() {
