@@ -8,6 +8,7 @@ import config.WebDriverConfig;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 
+import io.restassured.RestAssured;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -23,9 +24,10 @@ public class TestBase {
 
     SidebarPage sidebarPage = new SidebarPage();
     static WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
-    static AccountData accountData = ConfigFactory.create(AccountData.class, System.getProperties());
+    public static AccountData accountData = ConfigFactory.create(AccountData.class, System.getProperties());
     @BeforeAll
     static void beforeAll() {
+
         Configuration.baseUrl = config.getBaseUrl();
         Configuration.browser = config.getBrowser();
         Configuration.browserSize = config.getBrowserSize();

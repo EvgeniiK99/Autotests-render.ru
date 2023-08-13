@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
     id 'io.qameta.allure' version '2.11.2'
+    id "io.freefair.lombok" version "8.1.0"
 }
 
 group = 'org.example'
@@ -10,7 +11,8 @@ repositories {
     mavenCentral()
 }
 
-def allureVersion = "2.21.0"
+def     allureVersion = "2.21.0",
+        restAssuredVersion = "5.3.1"
 
 allure {
     report {
@@ -33,7 +35,10 @@ dependencies {
             'org.slf4j:slf4j-simple:2.0.7',
             'com.github.javafaker:javafaker:1.0.2',
             "io.qameta.allure:allure-selenide:$allureVersion",
-            'org.aeonbits.owner:owner:1.0.12'
+            'org.aeonbits.owner:owner:1.0.12',
+            "io.rest-assured:rest-assured:$restAssuredVersion",
+            "io.rest-assured:json-schema-validator:$restAssuredVersion",
+            "io.qameta.allure:allure-rest-assured:$allureVersion"
     )
 }
 
@@ -42,7 +47,15 @@ tasks.withType(JavaCompile) {
 }
 
 tasks.withType(Test) {
+    useJUnitPlatform()
     systemProperties(System.getProperties())
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
 }
 
 test {
@@ -56,5 +69,10 @@ task login_tests(type: Test) {
 task blogs_tests(type: Test) {
     useJUnitPlatform {
         includeTags("blogs_tests")
+    }
+}
+task api_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("api_tests")
     }
 }
