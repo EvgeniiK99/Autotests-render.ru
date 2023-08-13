@@ -2,6 +2,7 @@ package test;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -12,7 +13,8 @@ public class LoginTests extends TestBase {
     //fcff612052dd4fe6
 
     @Test
-    @DisplayName("Successful authorization")
+    @Tag("login_tests")
+    @DisplayName("Successful authorization test")
     void loginTest() {
         open("https://render.ru");
         sidebarPage
@@ -26,39 +28,42 @@ public class LoginTests extends TestBase {
         //todo сделать logout
     }
 
-    @Disabled("Продумать, как реализовать проверку")
+//    @Disabled("Продумать, как реализовать проверку")
     @Test
-    @DisplayName("Error authorization")
+    @Tag("login_tests")
+    @DisplayName("Error authorization test")
     void errorLoginTest() {
         open("https://render.ru");
         sidebarPage
                 .openSidebar()
                 .openLoginWindow()
-                .setEmail("wolic45238@mliok.com")
+                .setEmail(accountData.getEmail())
                 .setPassword("12345")
                 .clickSubmitButton();
 //                todo .checkErrorAuthMessage();
     }
 
     @Test
-    @DisplayName("Missed password authorization")
+    @Tag("login_tests")
+    @DisplayName("Missed password authorization test")
     void missedPasswordLoginTest() {
         open("https://render.ru");
         sidebarPage
                 .openSidebar()
                 .openLoginWindow()
-                .setEmail("wolic45238@mliok.com")
+                .setEmail(accountData.getEmail())
                 .tryClickSubmitButton();
     }
 
     @Test
-    @DisplayName("Missed email authorization")
+    @Tag("login_tests")
+    @DisplayName("Missed email authorization test")
     void missedEmailLoginTest() {
         open("https://render.ru");
         sidebarPage
                 .openSidebar()
                 .openLoginWindow()
-                .setPassword("fcff612052dd4fe6")
+                .setPassword(accountData.getPassword())
                 .tryClickSubmitButton();
     }
 }

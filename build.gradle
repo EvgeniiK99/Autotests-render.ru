@@ -50,6 +50,11 @@ test {
 }
 task registration_test(type: Test) {
     useJUnitPlatform {
-        includeTags("registration")
+        includeTags("login_tests")
+    }
+}
+task registration_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("blogs_tests")
     }
 }

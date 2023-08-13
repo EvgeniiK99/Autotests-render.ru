@@ -15,7 +15,7 @@ public class MainPageTests extends TestBase{
             "Português, Português (PT)",
             "Русский, Русский (RU)"
     })
-    @DisplayName("Change language - ")
+    @DisplayName("Change language test - ")
     @ParameterizedTest(name = "{0}")
     void changeLanguageTests(String language, String languageCode) {
         open("https://render.ru");
