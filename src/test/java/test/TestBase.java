@@ -43,7 +43,7 @@ public class TestBase {
             ));
             Configuration.browserCapabilities = capabilities;
         }
-        //        Configuration.holdBrowserOpen = true;
+                Configuration.holdBrowserOpen = true;
     }
     @BeforeEach
     void beforeEach() {
