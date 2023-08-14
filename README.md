@@ -30,3 +30,17 @@ ____
 <a id="jenkins"></a>
 ## <img alt="Jenkins" height="25" src="images/logo/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/20-evgenii_k99-homework15/)</a>
 ____
+<p align="center">  
+<a href="https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/"><img src="images/screenshots/jenkins.png" alt="Jenkins" width="950"/></a>  
+</p>
+
+___
+<a id="allure"></a>
+## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/20-evgenii_k99-homework15/allure/)</a>
+___
+
+### *Основная страница отчёта*
+
+<p align="center">  
+<img title="Allure Overview Dashboard" src="images/screenshots/allureReport.png" width="850">  
+</p>  
