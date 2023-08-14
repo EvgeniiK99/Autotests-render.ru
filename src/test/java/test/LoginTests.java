@@ -9,46 +9,44 @@ import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 
 public class LoginTests extends TestBase {
-
-    //wolic45238@mliok.com
-    //fcff612052dd4fe6
-
     @Test
     @Tag("login_tests")
     @DisplayName("Successful authorization test")
     void loginTest() {
-        open("https://render.ru");
+        mainPage
+                .openMainPage();
         sidebarPage
                 .openSidebar()
                 .openLoginWindow()
                 .setEmail(accountData.getEmail())
                 .setPassword(accountData.getPassword())
-                .clickSubmitButton()
+                .clickSubmitButton();
+        sidebarPage
                 .openUserDropdownMenu()
                 .checkUserName("testUser testUser");
-        //todo сделать logout
     }
 
-//    @Disabled("Продумать, как реализовать проверку")
     @Test
     @Tag("login_tests")
     @DisplayName("Error authorization test")
     void errorLoginTest() {
-        open("https://render.ru");
+        mainPage
+                .openMainPage();
         sidebarPage
                 .openSidebar()
                 .openLoginWindow()
                 .setEmail(accountData.getEmail())
                 .setPassword("12345")
-                .clickSubmitButton();
-//                todo .checkErrorAuthMessage();
+                .clickSubmitButton()
+                .checkErrorAuthMessage();
     }
 
     @Test
     @Tag("login_tests")
     @DisplayName("Missed password authorization test")
     void missedPasswordLoginTest() {
-        open("https://render.ru");
+        mainPage
+                .openMainPage();
         sidebarPage
                 .openSidebar()
                 .openLoginWindow()
@@ -60,7 +58,8 @@ public class LoginTests extends TestBase {
     @Tag("login_tests")
     @DisplayName("Missed email authorization test")
     void missedEmailLoginTest() {
-        open("https://render.ru");
+        mainPage
+                .openMainPage();
         sidebarPage
                 .openSidebar()
                 .openLoginWindow()

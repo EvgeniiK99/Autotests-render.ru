@@ -1,7 +1,6 @@
 package test;
 
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -19,6 +18,8 @@ public class MainPageTests extends TestBase{
     @ParameterizedTest(name = "{0}")
     void changeLanguageTests(String language, String languageCode) {
         open("https://render.ru");
+        mainPage
+                .openMainPage();
         sidebarPage
                 .openSidebar()
                 .changeLanguage(languageCode)

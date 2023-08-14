@@ -33,8 +33,8 @@ public class SidebarPage {
         return this;
     }
 
-    @Step("Open blogs page")
-    public BlogsPage openBlogsPage() {
+    @Step("Open blogs page from sidebar")
+    public BlogsPage openBlogsPageFromSidebar() {
         blogsMenu.click();
         return new BlogsPage();
     }
@@ -60,9 +60,13 @@ public class SidebarPage {
         } else if (language.equals("Deutsch")) {
             sidebar.shouldHave(text("Weltweite CG Ressourcen"));
             languageMenu.$(".dropdown").shouldHave(text(language));
+        } else if (language.equals("Português")) {
+            sidebar.shouldHave(text("Recursos mundiais de CG"));
+            languageMenu.$(".dropdown").shouldHave(text(language));
+        } else if (language.equals("Русский")) {
+            sidebar.shouldHave(text("Крупнейший информационный ресурс по компьютерной графике"));
+            languageMenu.$(".dropdown").shouldHave(text(language));
         }
-
-
         return this;
     }
 }

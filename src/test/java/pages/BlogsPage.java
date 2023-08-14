@@ -11,10 +11,9 @@ import static com.codeborne.selenide.Selenide.open;
 public class BlogsPage extends SidebarPage {
     SelenideElement
             filterButton = $(".blog-list__filter__button"),
+            closeFilterButton = $(byText("Закрыть фильтры")),
             fieldFilterByName = $(".blog-list__filter__name").find("input"),
             blogList = $("#packery");
-
-
 
     @Step("Open Blogs page")
     public BlogsPage openBlogsPage() {
@@ -28,8 +27,7 @@ public class BlogsPage extends SidebarPage {
     }
     @Step("Close filters")
     public BlogsPage closeFiltersAndSearch() {
-        //todo оптимизировать
-        $(byText("Закрыть фильтры")).click();
+        closeFilterButton.click();
         return this;
     }
     @Step("Use filter by Name")

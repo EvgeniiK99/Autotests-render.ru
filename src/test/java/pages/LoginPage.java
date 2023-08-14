@@ -26,14 +26,10 @@ public class LoginPage {
     }
 
     @Step("Click Submit button")
-    public SidebarPage clickSubmitButton() {
+    public LoginPage clickSubmitButton() {
         loginButton.click();
-        return new SidebarPage();
+        return new LoginPage();
     }
-//        public LoginPage clickSubmitButton() {
-//                loginButton.click();
-//                return this;
-//        }
 
     @Step("Try click Submit button")
     public SidebarPage tryClickSubmitButton() {
