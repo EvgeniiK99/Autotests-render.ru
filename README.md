@@ -107,11 +107,3 @@ ____
 <p align="center">  
 <img title="Allure Overview Dashboard" src="images/screenshots/telegram.png" width="550" alt="telegram_bot">  
 </p>
-
-____
-<a id="selenoid"></a>
-## <img alt="Selenoid" height="25" src="images/logo/Selenoid.svg" width="25"/></a> Примеры видео выполнения тестов на Selenoid
-____
-<p align="center">
-<img title="Selenoid Video" src="images/video/selenoid.mp4" width="550" height="350"  alt="selenoid_video">   
-</p>
