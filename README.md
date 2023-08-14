@@ -1,5 +1,5 @@
 <div style="align-items: center;">
-<img alt="renderRu" width="100" src="images/logo/render_logo_big.png" width="25"/>Проект по автоматизации тестирования для ресурса <a href="https://render.ru/">render.ru</a>
+Проект по автоматизации тестирования для ресурса <a href="https://render.ru/">render.ru</a>
 </div>
 
 > RENDER.RU - крупнейший информационный российский ресурс по компьютерной графике и 3D технологиям
