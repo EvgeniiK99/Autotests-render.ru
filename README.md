@@ -49,6 +49,27 @@ ____
 <a href="https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/"><img src="images/screenshots/jenkins.png" alt="Jenkins" width="950"/></a>  
 </p>
 
+### **Параметры сборки в Jenkins:**
+
+- *BROWSER (браузер, по умолчанию chrome)*
+- *BROWSER_SIZE (размер окна браузера, по умолчанию 1920x1080)*
+- *TESTS_TAG (выбор тестов для запуска, по умолчанию запуск всех тестов - test)*
+
+<a id="console"></a>
+## Команды для запуска из терминала
+___
+***Локальный запуск:***
+```bash  
+gradle clean test
+```
+
+***Удалённый запуск через Jenkins:***
+```bash  
+clean ${TESTS_TAG}
+"-Denv=remote"
+"-Dbrowser=${BROWSER}"
+"-DbrowserSize=${BROWSER_SIZE}"
+```
 ___
 <a id="allure"></a>
 ## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/20-evgenii_k99-homework15/allure/)</a>
@@ -81,10 +102,16 @@ ____
 ____
 
 <a id="telegram"></a>
-## <img alt="Allure" height="25" src="images/logo/Telegram.svg" width="25"/></a> Уведомление в Telegram при помощи бота
+## <img alt="Telegram" height="25" src="images/logo/Telegram.svg" width="25"/></a> Уведомление в Telegram при помощи бота
 ____
 <p align="center">  
-<img title="Allure Overview Dashboard" src="images/screenshots/telegram.png" width="550">  
+<img title="Allure Overview Dashboard" src="images/screenshots/telegram.png" width="550" alt="telegram_bot">  
 </p>
 
 ____
+<a id="selenoid"></a>
+## <img alt="Selenoid" height="25" src="images/logo/Selenoid.svg" width="25"/></a> Примеры видео выполнения тестов на Selenoid
+____
+<p align="center">
+<img title="Selenoid Video" src="images/video/selenoid.mp4" width="550" height="350"  alt="selenoid_video">   
+</p>
