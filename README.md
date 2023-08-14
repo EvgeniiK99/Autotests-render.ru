@@ -1,8 +1,5 @@
 <div style="display: flex; align-items: center;">
-    <a href="https://render.ru/"> <img src="images/logo/render_logo_big.png" alt="renderRu" width="100" height="100" style="margin-right: 20px;"> </a>
-    <div style="flex-grow: 1; word-wrap: break-word;">
-    Проект по автоматизации тестирования для ресурса <a href="https://render.ru/">render.ru</a>
-    </div>
+    <a href="https://render.ru/"> <img src="images/logo/render_logo_big.png" alt="renderRu" width="100" height="100" style="margin-right: 20px;"> </a> <div style="flex-grow: 1; word-wrap: break-word;">Проект по автоматизации тестирования для ресурса <a href="https://render.ru/">render.ru</a></div>
 </div>
 
 > RENDER.RU - крупнейший информационный российский ресурс по компьютерной графике и 3D технологиям
