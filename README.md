@@ -2,6 +2,7 @@
 
 > RENDER.RU - крупнейший информационный российский ресурс по компьютерной графике и 3D технологиям
 
+<a id="content"></a>
 ## **Содержание:**
 ____
 
@@ -103,4 +104,9 @@ ____
 ____
 <p align="center">  
 <img title="Allure Overview Dashboard" src="images/screenshots/telegram.png" width="550" alt="telegram_bot">  
+</p>
+
+---
+<p align="right">
+<a href="#content">К содержанию</a> 
 </p>
