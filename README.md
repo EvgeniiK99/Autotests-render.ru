@@ -6,7 +6,22 @@
 ____
 
 * <a href="#tools">Технологии и инструменты</a>
+
+* <a href="#cases">Примеры автоматизированных тест-кейсов</a>
+
 * <a href="#jenkins">Сборка в Jenkins</a>
+
+* <a href="#console">Запуск из терминала</a>
+
+* <a href="#allure">Allure отчет</a>
+
+* <a href="#allure-testops">Интеграция с Allure TestOps</a>
+
+* <a href="#jira">Интеграция с Jira</a>
+
+* <a href="#telegram">Уведомление в Telegram при помощи бота</a>
+
+* <a href="#video">Примеры видео выполнения тестов на Selenoid</a>
 ____
 <a id="tools"></a>
 ## <a name="Технологии и инструменты">**Технологии и инструменты:**</a>
@@ -44,3 +59,32 @@ ___
 <p align="center">  
 <img title="Allure Overview Dashboard" src="images/screenshots/AllureReport.png" width="850">  
 </p>  
+
+___
+<a id="allure-testops"></a>
+## <img alt="Allure" height="25" src="images/logo/Allure2.svg" width="25"/></a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/2197/dashboards">Allure TestOps</a>
+____
+### *Allure TestOps Dashboard*
+
+<p align="center">  
+<img title="Allure TestOps Dashboard" src="images/screenshots/allureTestOps.png" width="850">  
+</p>  
+
+___
+<a id="jira"></a>
+## <img alt="Allure" height="25" src="images/logo/Jira.svg" width="25"/></a> Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-682">Jira</a>
+____
+<p align="center">  
+<img title="Jira" src="images/screenshots/jira.png" width="850">  
+</p>
+
+____
+
+<a id="telegram"></a>
+## <img alt="Allure" height="25" src="images/logo/Telegram.svg" width="25"/></a> Уведомление в Telegram при помощи бота
+____
+<p align="center">  
+<img title="Allure Overview Dashboard" src="images/screenshots/telegram.png" width="550">  
+</p>
+
+____
