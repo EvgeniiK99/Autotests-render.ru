@@ -42,5 +42,5 @@ ___
 ### *Основная страница отчёта*
 
 <p align="center">  
-<img title="Allure Overview Dashboard" src="images/screenshots/AllureReport.pngllureReport.png" width="850">  
+<img title="Allure Overview Dashboard" src="images/screenshots/AllureReport.png" width="850">  
 </p>  
