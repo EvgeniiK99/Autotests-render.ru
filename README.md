@@ -47,6 +47,7 @@ ____
 <a href="https://jenkins.autotests.cloud/job/20-evgenii_k99-homework15/"><img src="images/screenshots/jenkins.png" alt="Jenkins" width="950"/></a>  
 </p>
 
+
 ### **Параметры сборки в Jenkins:**
 
 - *BROWSER (браузер, по умолчанию chrome)*
