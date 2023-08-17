@@ -9,7 +9,7 @@ import static org.aeonbits.owner.Config.*;
 })
 public interface WebDriverConfig extends Config {
     @Key("baseUrl")
-    @DefaultValue("https://demoqa.com")
+    @DefaultValue("https://render.ru/ru")
     String getBaseUrl();
 
     @Key("browser")
@@ -29,6 +29,5 @@ public interface WebDriverConfig extends Config {
     Boolean getIsRemote();
 
     @Key("remoteUrl")
-    @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
     String getRemoteUrl();
 }
