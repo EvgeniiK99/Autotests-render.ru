@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class BlogsPage extends SidebarPage {
+public class BlogsPage {
     SelenideElement
             filterButton = $(".blog-list__filter__button"),
             closeFilterButton = $(byText("Закрыть фильтры")),

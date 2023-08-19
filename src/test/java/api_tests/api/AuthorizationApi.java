@@ -1,12 +1,11 @@
-package apiTests.api;
+package api_tests.api;
 
-import apiTests.models.LoginBodyModel;
-import apiTests.models.LoginResponseModel;
-import apiTests.tests.TestBaseApi;
+import api_tests.models.LoginBodyModel;
+import api_tests.models.LoginResponseModel;
 import io.qameta.allure.Step;
 
-import static apiTests.specs.LoginSpec.loginRequestSpec;
-import static apiTests.specs.LoginSpec.loginResponseSpecCodeIs200;
+import static api_tests.specs.LoginSpec.loginRequestSpec;
+import static api_tests.specs.LoginSpec.loginResponseSpecCodeIs200;
 import static io.restassured.RestAssured.given;
 
 public class AuthorizationApi{

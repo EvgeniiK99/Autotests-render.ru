@@ -34,7 +34,7 @@ public class LoginTests extends TestBase {
                 .setEmail(accountData.getEmail())
                 .setPassword("12345")
                 .clickSubmitButton()
-                .checkErrorAuthMessage();
+                .checkErrorAuthMessage("Ошибка авторизации");
     }
 
     @Test

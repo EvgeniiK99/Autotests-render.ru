@@ -1,15 +1,13 @@
-package apiTests.tests;
+package api_tests.tests;
 
-import apiTests.models.AddedBlogToFavoriteResponseModel;
-import apiTests.models.LoginBodyModel;
-import apiTests.models.LoginResponseModel;
-import org.junit.jupiter.api.Disabled;
+import api_tests.models.AddedBlogToFavoriteResponseModel;
+import api_tests.models.LoginResponseModel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import static apiTests.specs.BlogsSpec.addBlogToFavoriteRequestSpec;
-import static apiTests.specs.BlogsSpec.addBlogToFavoriteResponseSpecCodeIs200;
+import static api_tests.specs.BlogsSpec.addBlogToFavoriteRequestSpec;
+import static api_tests.specs.BlogsSpec.addBlogToFavoriteResponseSpecCodeIs200;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;

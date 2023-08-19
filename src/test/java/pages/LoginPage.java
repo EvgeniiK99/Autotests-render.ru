@@ -37,8 +37,8 @@ public class LoginPage {
         return new SidebarPage();
     }
     @Step("Check error authorization message")
-    public LoginPage checkErrorAuthMessage() {
-        errorMessage.shouldHave(text("Ошибка авторизации"));
+    public LoginPage checkErrorAuthMessage(String errorText) {
+        errorMessage.shouldHave(text(errorText));
         return this;
     }
 

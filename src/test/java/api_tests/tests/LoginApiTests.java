@@ -1,7 +1,6 @@
-package apiTests.tests;
+package api_tests.tests;
 
-import apiTests.models.LoginBodyModel;
-import apiTests.models.LoginResponseModel;
+import api_tests.models.LoginResponseModel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;

@@ -1,7 +1,7 @@
-package apiTests.tests;
+package api_tests.tests;
 
-import apiTests.api.AuthorizationApi;
-import apiTests.models.LoginBodyModel;
+import api_tests.api.AuthorizationApi;
+import api_tests.models.LoginBodyModel;
 import config.AccountData;
 import io.restassured.RestAssured;
 import org.aeonbits.owner.ConfigFactory;

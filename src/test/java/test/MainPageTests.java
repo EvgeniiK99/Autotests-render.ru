@@ -7,20 +7,20 @@ import org.junit.jupiter.params.provider.CsvSource;
 public class MainPageTests extends TestBase{
 
     @CsvSource({
-            "English, English (EN)",
-            "Deutsch, Deutsch (DE)",
-            "Português, Português (PT)",
-            "Русский, Русский (RU)"
+            "English, English (EN), Worldwide CG resource",
+            "Deutsch, Deutsch (DE), Weltweite CG Ressourcen",
+            "Português, Português (PT), Recursos mundiais de CG",
+            "Русский, Русский (RU), Крупнейший информационный ресурс по компьютерной графике"
     })
     @DisplayName("Change language test - ")
     @ParameterizedTest(name = "{0}")
-    void changeLanguageTests(String language, String languageCode) {
+    void changeLanguageTests(String language, String languageCode, String header) {
         mainPage
                 .openMainPage();
         sidebarPage
                 .openSidebar()
                 .changeLanguage(languageCode)
                 .openSidebar()
-                .checkLanguage(language);
+                .checkLanguage(language, header);
     }
 }

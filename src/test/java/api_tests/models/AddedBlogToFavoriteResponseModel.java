@@ -1,4 +1,4 @@
-package apiTests.models;
+package api_tests.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
