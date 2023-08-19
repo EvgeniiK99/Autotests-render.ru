@@ -108,6 +108,14 @@ ____
 </p>
 
 ---
+<a id="selenoid"></a>
+## <img alt="Selenoid" height="25" src="images/logo/Selenoid.svg" width="25"/></a> Пример видео выполнения теста на Selenoid
+____
+<p align="center">  
+<img title=Selenoid" src="images/gifs/selenoidGif.gif" width="550" alt="selenoid">  
+</p>
+
+---
 <p align="right">
 <a href="#content">К содержанию</a> 
 </p>
