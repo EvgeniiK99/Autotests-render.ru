@@ -18,8 +18,6 @@ public class BlogsApiTests extends TestBaseApi {
     @Tag("api_tests")
     void addBlogToFavoriteApiTest() {
 
-//        loginData.setLogin(accountData.getEmail());
-//        loginData.setPassword(accountData.getPassword());
         LoginResponseModel loginResponse = authorizationApi.login(credentials);
 
         AddedBlogToFavoriteResponseModel addedBlogToFavoriteResponse = step("Add Blog to favorite request", ()->

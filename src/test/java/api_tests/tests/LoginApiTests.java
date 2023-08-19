@@ -13,8 +13,6 @@ public class LoginApiTests extends TestBaseApi {
     @DisplayName("Successful login API test")
     @Tag("api_tests")
     void successfulLoginApiTest() {
-//        loginData.setLogin(accountData.getEmail());
-//        loginData.setPassword(accountData.getPassword());
 
         LoginResponseModel loginResponse = authorizationApi.login(credentials);
         step("Check token in not Null", ()->
