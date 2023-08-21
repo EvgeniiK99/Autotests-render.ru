@@ -13,7 +13,8 @@ public class BlogsPage {
             filterButton = $(".blog-list__filter__button"),
             closeFilterButton = $(byText("Закрыть фильтры")),
             fieldFilterByName = $(".blog-list__filter__name").find("input"),
-            blogList = $("#packery");
+            blogList = $("#packery"),
+            addToFavoriteButton = $(".blog-post__toolbar__favorite");
 
     @Step("Open Blogs page")
     public BlogsPage openBlogsPage() {
@@ -40,4 +41,15 @@ public class BlogsPage {
         blogList.$(byText(value)).shouldBe(visible);
         return this;
     }
+    @Step("Open Blog")
+    public BlogsPage openBlog(Integer blogId) {
+        open("/blogs/post/" + blogId);
+        return this;
+    }
+    @Step("Add Blog to favorite")
+    public BlogsPage addBlogToFavorite() {
+        addToFavoriteButton.click();
+        return this;
+    }
+
 }

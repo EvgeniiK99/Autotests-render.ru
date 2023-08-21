@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 public class AuthorizationApi{
 
     @Step("Login request")
-    public LoginResponseModel login(LoginBodyModel loginData) {
+    public static LoginResponseModel login(LoginBodyModel loginData) {
         return given(loginRequestSpec)
                 .body(loginData)
                 .when()
