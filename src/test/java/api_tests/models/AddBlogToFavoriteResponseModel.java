@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
-public class AddedBlogToFavoriteResponseModel {
+public class AddBlogToFavoriteResponseModel {
     @JsonProperty("user_id")
     int userId;
     @JsonProperty("post_id")

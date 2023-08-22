@@ -1,6 +1,7 @@
 package test;
 
 import api_tests.api.AuthorizationApi;
+import api_tests.api.BlogsApi;
 import api_tests.models.LoginResponseModel;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
@@ -35,9 +36,30 @@ public class BlogsPageTests extends TestBase {
         LoginResponseModel loginResponse = AuthorizationApi.login(credentials);
         open("");
         getWebDriver().manage().addCookie(new Cookie("xf_user", loginResponse.getToken()));
+
+        Integer blogId = 24578;
         new BlogsPage()
-                .openBlog(1111)
-                .addBlogToFavorite();
-        //todo Добавить проверки
+                .openBlog(blogId)
+                .addBlogToFavorite()
+                .checkBlogIsInFavorite();
+
+        BlogsApi.deleteBlogFromFavorite(loginResponse, blogId);
+    }
+
+    @Test
+    @Tag("blogs_tests")
+    @DisplayName("Successful delete blog from favorite")
+    void deleteBlogFromFavorite() {
+        Integer blogId = 24570;
+
+        LoginResponseModel loginResponse = AuthorizationApi.login(credentials);
+        BlogsApi.addBlogToFavorite(loginResponse, blogId);
+        open("");
+        getWebDriver().manage().addCookie(new Cookie("xf_user", loginResponse.getToken()));
+
+        new BlogsPage()
+                .openBlog(blogId)
+                .deleteBlogFromFavorite()
+                .checkBlogIsNotInFavorite();
     }
 }

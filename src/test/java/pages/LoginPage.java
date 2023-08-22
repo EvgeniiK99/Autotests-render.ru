@@ -28,13 +28,13 @@ public class LoginPage {
     @Step("Click Submit button")
     public LoginPage clickSubmitButton() {
         loginButton.click();
-        return new LoginPage();
+        return this;
     }
 
     @Step("Try click Submit button")
-    public SidebarPage tryClickSubmitButton() {
+    public LoginPage tryClickSubmitButton() {
         loginButton.shouldBe(disabled);
-        return new SidebarPage();
+        return this;
     }
     @Step("Check error authorization message")
     public LoginPage checkErrorAuthMessage(String errorText) {

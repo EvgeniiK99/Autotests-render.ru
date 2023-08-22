@@ -14,7 +14,7 @@ public class BlogsPage {
             closeFilterButton = $(byText("Закрыть фильтры")),
             fieldFilterByName = $(".blog-list__filter__name").find("input"),
             blogList = $("#packery"),
-            addToFavoriteButton = $(".blog-post__toolbar__favorite");
+            favoriteButton = $(".blog-post__toolbar__favorite");
 
     @Step("Open Blogs page")
     public BlogsPage openBlogsPage() {
@@ -48,8 +48,22 @@ public class BlogsPage {
     }
     @Step("Add Blog to favorite")
     public BlogsPage addBlogToFavorite() {
-        addToFavoriteButton.click();
+        favoriteButton.click();
         return this;
     }
-
+    @Step("Check blog is in favorite")
+    public BlogsPage checkBlogIsInFavorite() {
+        favoriteButton.shouldHave(cssClass("blog-post__toolbar__in-favorites"));
+        return this;
+    }
+    @Step("Delete blog from favorite")
+    public BlogsPage deleteBlogFromFavorite() {
+        favoriteButton.click();
+        return this;
+    }
+    @Step("Check blog is not in favorite")
+    public BlogsPage checkBlogIsNotInFavorite() {
+        favoriteButton.shouldNotHave(cssClass("blog-post__toolbar__in-favorites"));
+        return this;
+    }
 }

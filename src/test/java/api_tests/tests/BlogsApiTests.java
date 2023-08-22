@@ -2,7 +2,8 @@ package api_tests.tests;
 
 import api_tests.api.AuthorizationApi;
 import api_tests.api.BlogsApi;
-import api_tests.models.AddedBlogToFavoriteResponseModel;
+import api_tests.models.AddBlogToFavoriteResponseModel;
+import api_tests.models.DeleteBlogFromFavoriteResponseModel;
 import api_tests.models.LoginResponseModel;
 import io.qameta.allure.Epic;
 import org.junit.jupiter.api.DisplayName;
@@ -15,18 +16,31 @@ import static org.junit.jupiter.api.Assertions.*;
 @Epic("API_Tests")
 public class BlogsApiTests extends TestBaseApi {
     @Test
-    @DisplayName("Successful added blog to favotite")
+    @DisplayName("Successful added blog to favorite")
     @Tag("api_tests")
     void addBlogToFavoriteApiTest() {
-        Integer blogId = 24578;
+        Integer blogId = 24577;
         LoginResponseModel loginResponse = AuthorizationApi.login(credentials);
-        AddedBlogToFavoriteResponseModel addBlogResponse = BlogsApi.addBlogToFavorite(loginResponse, blogId);
+        AddBlogToFavoriteResponseModel addBlogResponse = BlogsApi.addBlogToFavorite(loginResponse, blogId);
 
-        step("Check blog in favorite", ()-> {
+        step("Check blog in favorite", () -> {
             assertEquals(blogId, addBlogResponse.getPostId());
             assertTrue(addBlogResponse.isFavorite());
         });
+    }
 
+    @Test
+    @DisplayName("Successful delete blog from favorite")
+    @Tag("api_tests")
+    void deleteBlogFromFavoriteApiTest() {
+        Integer blogId = 24578;
+        LoginResponseModel loginResponse = AuthorizationApi.login(credentials);
+        BlogsApi.addBlogToFavorite(loginResponse, blogId);
+        DeleteBlogFromFavoriteResponseModel delBlogResponse = BlogsApi.deleteBlogFromFavorite(loginResponse, blogId);
 
+        step("Check blog is not in favorite", () -> {
+            assertEquals(blogId, delBlogResponse.getPostId());
+            assertFalse(delBlogResponse.isFavorite());
+        });
     }
 }

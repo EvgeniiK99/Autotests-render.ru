@@ -20,4 +20,14 @@ public class BlogsSpec {
             .log(BODY)
             .expectStatusCode(200)
             .build();
+    public static RequestSpecification deleteBlogFromFavoriteRequestSpec = with()
+            .log().uri()
+            .log().method()
+            .log().body()
+            .filter(withCustomTemplates());
+    public static ResponseSpecification deleteBlogFromFavoriteResponseSpecCodeIs200 = new ResponseSpecBuilder()
+            .log(STATUS)
+            .log(BODY)
+            .expectStatusCode(200)
+            .build();
 }
