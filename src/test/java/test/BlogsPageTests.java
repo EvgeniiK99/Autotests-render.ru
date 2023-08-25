@@ -3,6 +3,7 @@ package test;
 import api_tests.api.AuthorizationApi;
 import api_tests.api.BlogsApi;
 import api_tests.models.LoginResponseModel;
+import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -14,6 +15,7 @@ import static api_tests.tests.TestBaseApi.credentials;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
+@Epic("UI_Tests")
 @Feature("Blogs page")
 public class BlogsPageTests extends TestBase {
 

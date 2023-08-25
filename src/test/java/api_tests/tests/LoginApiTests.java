@@ -20,7 +20,7 @@ public class LoginApiTests extends TestBaseApi {
     void successfulLoginApiTest() {
 
         LoginResponseModel loginResponse = AuthorizationApi.login(credentials);
-        step("Check token in not Null", ()->
+        step("Check token is not Null", ()->
                 assertNotNull(loginResponse.getToken()));
     }
 }

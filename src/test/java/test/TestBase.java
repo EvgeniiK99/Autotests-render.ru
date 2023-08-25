@@ -20,7 +20,8 @@ import pages.SidebarPage;
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
-
+//todo Добавить аннотаций к теста и классам
+//todo Проверить в тестах объявление экземпляров Page
 public class TestBase {
 
     SidebarPage sidebarPage = new SidebarPage();
@@ -34,7 +35,7 @@ public class TestBase {
 
         Configuration.baseUrl = config.getBaseUrl();
         Configuration.browser = config.getBrowser();
-        Configuration.browserSize = config.getBrowserSize();
+        Configuration.browserSize = config.getBrowserSize(); //todo Добавить в Jenkins
         Configuration.browserVersion = config.getBrowserVersion();
         Configuration.pageLoadStrategy = "eager";
         if (config.getIsRemote()) {

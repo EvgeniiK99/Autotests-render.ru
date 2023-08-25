@@ -1,9 +1,13 @@
 package test;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@Epic("UI_Tests")
+@Feature("Authorizations")
 public class LoginTests extends TestBase {
     @Test
     @Tag("login_tests")
