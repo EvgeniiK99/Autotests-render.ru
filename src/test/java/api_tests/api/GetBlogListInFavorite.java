@@ -1,7 +1,6 @@
 package api_tests.api;
 
 import api_tests.models.GetBlogListInFavoriteResponseModel;
-import api_tests.models.LoginBodyModel;
 import api_tests.models.LoginResponseModel;
 import io.qameta.allure.Step;
 

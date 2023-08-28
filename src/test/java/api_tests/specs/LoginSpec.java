@@ -22,4 +22,9 @@ public class LoginSpec {
             .log(BODY)
             .expectStatusCode(200)
             .build();
+    public static ResponseSpecification errorLoginResponseSpecCodeIs401 = new ResponseSpecBuilder()
+            .log(STATUS)
+            .log(BODY)
+            .expectStatusCode(401)
+            .build();
 }
