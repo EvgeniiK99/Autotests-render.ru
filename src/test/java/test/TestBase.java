@@ -30,8 +30,8 @@ public class TestBase {
     public static AccountData accountData = ConfigFactory.create(AccountData.class, System.getProperties());
     @BeforeAll
     static void beforeAll() {
-        RestAssured.baseURI = "https://render.ru/ru";
-        RestAssured.basePath = "/v1/user";
+        RestAssured.baseURI = config.getBaseUrl();
+        RestAssured.basePath = config.getBasePath();
 
         Configuration.baseUrl = config.getBaseUrl();
         Configuration.browser = config.getBrowser();

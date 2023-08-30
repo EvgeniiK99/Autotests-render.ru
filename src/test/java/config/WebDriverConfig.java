@@ -12,6 +12,10 @@ public interface WebDriverConfig extends Config {
     @DefaultValue("https://render.ru/ru")
     String getBaseUrl();
 
+    @Key("basePath")
+    @DefaultValue("/v1/user")
+    String getBasePath();
+
     @Key("browser")
     @DefaultValue("CHROME")
     String getBrowser();
