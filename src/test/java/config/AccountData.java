@@ -8,4 +8,6 @@ public interface AccountData extends Config {
     String getEmail();
     @Key("password")
     String getPassword();
+    @Key("userId")
+    int getUserId();
 }

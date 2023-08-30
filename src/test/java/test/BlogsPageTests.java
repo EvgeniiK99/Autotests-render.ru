@@ -5,6 +5,8 @@ import api_tests.api.BlogsApi;
 import api_tests.models.LoginResponseModel;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -14,6 +16,7 @@ import pages.BlogsPage;
 import static api_tests.tests.TestBaseApi.credentials;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static io.qameta.allure.SeverityLevel.NORMAL;
 
 @Epic("UI_Tests")
 @Feature("Blogs page")
@@ -21,6 +24,8 @@ public class BlogsPageTests extends TestBase {
 
     @Test
     @Tag("blogs_tests")
+    @Owner("Evgenii Klimashin")
+    @Severity(NORMAL)
     @DisplayName("Successful use filter by Name")
     void usingFilterByName() {
         new BlogsPage()
@@ -33,6 +38,8 @@ public class BlogsPageTests extends TestBase {
 
     @Test
     @Tag("blogs_tests")
+    @Owner("Evgenii Klimashin")
+    @Severity(NORMAL)
     @DisplayName("Successful add blog to favorite")
     void addBlogToFavorite() {
         LoginResponseModel loginResponse = AuthorizationApi.login(credentials);

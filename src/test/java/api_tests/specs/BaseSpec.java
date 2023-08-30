@@ -9,25 +9,20 @@ import static io.restassured.RestAssured.with;
 import static io.restassured.filter.log.LogDetail.BODY;
 import static io.restassured.filter.log.LogDetail.STATUS;
 
-public class BlogsSpec {
-    public static RequestSpecification addBlogToFavoriteRequestSpec = with()
+public class BaseSpec {
+    public static RequestSpecification baseRequestSpec = with()
             .log().uri()
             .log().method()
             .log().body()
             .filter(withCustomTemplates());
-    public static ResponseSpecification addBlogToFavoriteResponseSpecCodeIs200 = new ResponseSpecBuilder()
+    public static ResponseSpecification baseResponseSpecCodeIs200 = new ResponseSpecBuilder()
             .log(STATUS)
             .log(BODY)
             .expectStatusCode(200)
             .build();
-    public static RequestSpecification deleteBlogFromFavoriteRequestSpec = with()
-            .log().uri()
-            .log().method()
-            .log().body()
-            .filter(withCustomTemplates());
-    public static ResponseSpecification deleteBlogFromFavoriteResponseSpecCodeIs200 = new ResponseSpecBuilder()
+    public static ResponseSpecification baseResponseSpecCodeIs401 = new ResponseSpecBuilder()
             .log(STATUS)
             .log(BODY)
-            .expectStatusCode(200)
+            .expectStatusCode(401)
             .build();
 }

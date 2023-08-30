@@ -3,8 +3,7 @@ package api_tests.tests;
 import api_tests.api.AuthorizationApi;
 import api_tests.api.BlogsApi;
 import api_tests.api.GetBlogListInFavorite;
-import api_tests.models.AddBlogToFavoriteResponseModel;
-import api_tests.models.DeleteBlogFromFavoriteResponseModel;
+import api_tests.models.BlogsResponseModel;
 import api_tests.models.GetBlogListInFavoriteResponseModel;
 import api_tests.models.LoginResponseModel;
 import io.qameta.allure.Epic;
@@ -29,17 +28,17 @@ public class BlogsApiTests extends TestBaseApi {
     @Severity(NORMAL)
     @Tag("api_tests")
     void addBlogToFavoriteApiTest() {
-        int blogId = 24577;
+        int blogId = 24615;
         LoginResponseModel loginResponse = AuthorizationApi.login(credentials);
+        BlogsResponseModel addBlogResponse = BlogsApi.addBlogToFavorite(loginResponse, blogId);
         GetBlogListInFavoriteResponseModel[] getBlogListInFavorite = GetBlogListInFavorite.getBlogListInFavorite(loginResponse);
 
-        AddBlogToFavoriteResponseModel addBlogResponse = BlogsApi.addBlogToFavorite(loginResponse, blogId);
         step("Check blog in favorite", () -> {
             assertEquals(blogId, addBlogResponse.getPostId());
-            //todo Переделать проверку id в массиве
-            assertEquals(blogId, getBlogListInFavorite[2].getId());
+            assertEquals(blogId, getBlogListInFavorite[getBlogListInFavorite.length - 1].getId());
             assertTrue(addBlogResponse.isFavorite());
         });
+        BlogsApi.deleteBlogFromFavorite(loginResponse, blogId);
 
     }
 
@@ -52,7 +51,7 @@ public class BlogsApiTests extends TestBaseApi {
         Integer blogId = 24578;
         LoginResponseModel loginResponse = AuthorizationApi.login(credentials);
         BlogsApi.addBlogToFavorite(loginResponse, blogId);
-        DeleteBlogFromFavoriteResponseModel delBlogResponse = BlogsApi.deleteBlogFromFavorite(loginResponse, blogId);
+        BlogsResponseModel delBlogResponse = BlogsApi.deleteBlogFromFavorite(loginResponse, blogId);
 
         step("Check blog is not in favorite", () -> {
             assertEquals(blogId, delBlogResponse.getPostId());

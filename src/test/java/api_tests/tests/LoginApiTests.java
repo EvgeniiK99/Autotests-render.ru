@@ -9,6 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import static api_tests.specs.BaseSpec.baseResponseSpecCodeIs401;
 import static api_tests.specs.LoginSpec.*;
 import static io.qameta.allure.Allure.step;
 import static io.qameta.allure.SeverityLevel.*;
@@ -43,7 +44,7 @@ public class LoginApiTests extends TestBaseApi {
                 .when()
                 .post("/login")
                 .then()
-                .spec(errorLoginResponseSpecCodeIs401)
+                .spec(baseResponseSpecCodeIs401)
                 .extract().as(ErrorLoginResponseModel.class));
 
         step("Check error message", ()->

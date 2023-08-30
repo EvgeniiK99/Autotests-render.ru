@@ -4,8 +4,8 @@ import api_tests.models.LoginBodyModel;
 import api_tests.models.LoginResponseModel;
 import io.qameta.allure.Step;
 
+import static api_tests.specs.BaseSpec.baseResponseSpecCodeIs200;
 import static api_tests.specs.LoginSpec.loginRequestSpec;
-import static api_tests.specs.LoginSpec.loginResponseSpecCodeIs200;
 import static io.restassured.RestAssured.given;
 
 public class AuthorizationApi{
@@ -17,7 +17,7 @@ public class AuthorizationApi{
                 .when()
                 .post("/login")
                 .then()
-                .spec(loginResponseSpecCodeIs200)
+                .spec(baseResponseSpecCodeIs200)
                 .extract().as(LoginResponseModel.class);
     }
 }
