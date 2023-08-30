@@ -20,8 +20,6 @@ import pages.SidebarPage;
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
-//todo Добавить аннотаций к теста и классам
-//todo Проверить в тестах объявление экземпляров Page
 public class TestBase {
 
     SidebarPage sidebarPage = new SidebarPage();
