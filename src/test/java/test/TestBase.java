@@ -33,7 +33,7 @@ public class TestBase {
 
         Configuration.baseUrl = config.getBaseUrl();
         Configuration.browser = config.getBrowser();
-        Configuration.browserSize = config.getBrowserSize(); //todo Добавить в Jenkins
+        Configuration.browserSize = config.getBrowserSize();
         Configuration.browserVersion = config.getBrowserVersion();
         Configuration.pageLoadStrategy = "eager";
         if (config.getIsRemote()) {
