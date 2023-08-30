@@ -2,8 +2,10 @@ package api_tests.tests;
 
 import api_tests.api.AuthorizationApi;
 import api_tests.api.BlogsApi;
+import api_tests.api.GetBlogListInFavorite;
 import api_tests.models.AddBlogToFavoriteResponseModel;
 import api_tests.models.DeleteBlogFromFavoriteResponseModel;
+import api_tests.models.GetBlogListInFavoriteResponseModel;
 import api_tests.models.LoginResponseModel;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -29,12 +31,13 @@ public class BlogsApiTests extends TestBaseApi {
     void addBlogToFavoriteApiTest() {
         int blogId = 24577;
         LoginResponseModel loginResponse = AuthorizationApi.login(credentials);
-//        GetBlogListInFavoriteResponseModel getBlogListInFavorite = GetBlogListInFavorite.getBlogListInFavorite(loginResponse);
-//        int listSize = getBlogListInFavorite.getBlogList().size();
-//        GetBlogListInFavorite.getBlogListInFavorite(loginResponse);
+        GetBlogListInFavoriteResponseModel[] getBlogListInFavorite = GetBlogListInFavorite.getBlogListInFavorite(loginResponse);
+
         AddBlogToFavoriteResponseModel addBlogResponse = BlogsApi.addBlogToFavorite(loginResponse, blogId);
         step("Check blog in favorite", () -> {
             assertEquals(blogId, addBlogResponse.getPostId());
+            //todo Переделать проверку id в массиве
+            assertEquals(blogId, getBlogListInFavorite[2].getId());
             assertTrue(addBlogResponse.isFavorite());
         });
 

@@ -10,13 +10,13 @@ import static io.restassured.RestAssured.given;
 
 public class GetBlogListInFavorite {
     @Step("Get request")
-    public static GetBlogListInFavoriteResponseModel getBlogListInFavorite(LoginResponseModel loginResponse) {
+    public static GetBlogListInFavoriteResponseModel[] getBlogListInFavorite(LoginResponseModel loginResponse) {
         return given(getRequestSpec)
                 .header("Cookie", "xf_user=" + loginResponse.getToken())
                 .when()
                 .get("/255646/favorites/posts")
                 .then()
                 .spec(getResponseSpecCodeIs200)
-                .extract().as(GetBlogListInFavoriteResponseModel.class);
+                .extract().as(GetBlogListInFavoriteResponseModel[].class);
     }
 }
