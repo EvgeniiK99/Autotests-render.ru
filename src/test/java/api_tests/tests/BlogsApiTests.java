@@ -19,14 +19,15 @@ import static io.qameta.allure.Allure.step;
 import static io.qameta.allure.SeverityLevel.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+@Owner("Evgenii Klimashin")
 @Epic("API_Tests")
 @Feature("Blogs")
 public class BlogsApiTests extends TestBaseApi {
+
     @Test
-    @DisplayName("Successful add blog to favorite")
-    @Owner("Evgenii Klimashin")
     @Severity(NORMAL)
     @Tag("api_tests")
+    @DisplayName("Successful add blog to favorite")
     void addBlogToFavoriteApiTest() {
         int blogId = 24615;
         LoginResponseModel loginResponse = AuthorizationApi.login(credentials);
@@ -43,10 +44,9 @@ public class BlogsApiTests extends TestBaseApi {
     }
 
     @Test
-    @DisplayName("Successful delete blog from favorite")
-    @Owner("Evgenii Klimashin")
     @Severity(NORMAL)
     @Tag("api_tests")
+    @DisplayName("Successful delete blog from favorite")
     void deleteBlogFromFavoriteApiTest() {
         Integer blogId = 24578;
         LoginResponseModel loginResponse = AuthorizationApi.login(credentials);

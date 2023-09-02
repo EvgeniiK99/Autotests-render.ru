@@ -9,11 +9,11 @@ import static org.aeonbits.owner.Config.*;
 })
 public interface WebDriverConfig extends Config {
     @Key("baseUrl")
-    @DefaultValue("https://render.ru/ru")
+    @DefaultValue("https://render.ru")
     String getBaseUrl();
 
     @Key("basePath")
-    @DefaultValue("/v1/user")
+    @DefaultValue("/ru/v1")
     String getBasePath();
 
     @Key("browser")

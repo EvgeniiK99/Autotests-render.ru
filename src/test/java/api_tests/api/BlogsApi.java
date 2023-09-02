@@ -9,12 +9,13 @@ import static api_tests.specs.BaseSpec.baseResponseSpecCodeIs200;
 import static io.restassured.RestAssured.given;
 
 public class BlogsApi {
+
     @Step("Add Blog to favorite API request")
     public static BlogsResponseModel addBlogToFavorite(LoginResponseModel loginResponse, Integer blogId) {
         return given(baseRequestSpec)
                 .header("Cookie", "xf_user=" + loginResponse.getToken())
                 .when()
-                .post("/favorites/post/" + blogId)
+                .post("/user/favorites/post/" + blogId)
                 .then()
                 .spec(baseResponseSpecCodeIs200)
                 .extract().as(BlogsResponseModel.class);
@@ -25,7 +26,7 @@ public class BlogsApi {
         return given(baseRequestSpec)
                 .header("Cookie", "xf_user=" + loginResponse.getToken())
                 .when()
-                .delete("/favorites/post/" + blogId)
+                .delete("/user/favorites/post/" + blogId)
                 .then()
                 .spec(baseResponseSpecCodeIs200)
                 .extract().as(BlogsResponseModel.class);

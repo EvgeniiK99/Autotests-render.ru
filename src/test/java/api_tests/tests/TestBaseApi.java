@@ -9,7 +9,7 @@ import org.junit.jupiter.api.BeforeAll;
 
 public class TestBaseApi {
 
-    static WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
+    public static WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
     public static AccountData accountData = ConfigFactory.create(AccountData.class, System.getProperties());
 
     public static LoginBodyModel credentials = new LoginBodyModel(accountData.getEmail(), accountData.getPassword());

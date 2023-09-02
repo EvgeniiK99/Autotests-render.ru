@@ -6,8 +6,8 @@ import lombok.Data;
 @Data
 public class BlogsResponseModel {
     @JsonProperty("user_id")
-    int userId;
+    private int userId;
     @JsonProperty("post_id")
-    int postId;
-    boolean favorite;
+    private int postId;
+    private boolean favorite;
 }
