@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage {
-    SelenideElement
+    private final SelenideElement
             emailInput = $(byAttribute("name", "login")),
             passwordInput = $(byAttribute("name", "password")),
             loginButton = $(byAttribute("type", "submit")),
@@ -19,6 +19,7 @@ public class LoginPage {
         emailInput.setValue(email);
         return this;
     }
+
     @Step("Set Password")
     public LoginPage setPassword(String password) {
         passwordInput.setValue(password);
@@ -32,14 +33,12 @@ public class LoginPage {
     }
 
     @Step("Try click Submit button")
-    public LoginPage tryClickSubmitButton() {
+    public void tryClickSubmitButton() {
         loginButton.shouldBe(disabled);
-        return this;
-    }
-    @Step("Check error authorization message")
-    public LoginPage checkErrorAuthMessage(String errorText) {
-        errorMessage.shouldHave(text(errorText));
-        return this;
     }
 
+    @Step("Check error authorization message")
+    public void checkErrorAuthMessage(String errorText) {
+        errorMessage.shouldHave(text(errorText));
+    }
 }

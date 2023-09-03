@@ -7,16 +7,15 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
-public class SidebarPage {
+public class SidebarComponent {
 
-    SelenideElement
+    private final SelenideElement
             sidebar = $(".main-menu"),
             userMenu = $(".menu__username"),
-            blogsMenu = $(byText("БЛОГИ")),
             languageMenu = $(".menu__lang");
 
     @Step("Open sidebar")
-    public SidebarPage openSidebar() {
+    public SidebarComponent openSidebar() {
         sidebar.hover();
         return this;
     }
@@ -28,29 +27,26 @@ public class SidebarPage {
     }
 
     @Step("Open user dropdown menu")
-    public SidebarPage openUserDropdownMenu() {
+    public SidebarComponent openUserDropdownMenu() {
         userMenu.click();
         return this;
     }
 
     @Step("Change language - {language}")
-    public SidebarPage changeLanguage(String language) {
+    public SidebarComponent changeLanguage(String language) {
         languageMenu.click();
         languageMenu.$(byText(language)).click();
         return this;
     }
 
     @Step("Check user name")
-    public SidebarPage checkUserName(String userName) {
+    public void checkUserName(String userName) {
         sidebar.$(byText(userName)).shouldBe(visible);
-        return this;
     }
 
     @Step("Check language - {language}")
-    public SidebarPage checkLanguage(String language, String header) {
+    public void checkLanguage(String language, String header) {
         sidebar.shouldHave(text(header));
         languageMenu.$(".dropdown").shouldHave(text(language));
-
-        return this;
     }
 }

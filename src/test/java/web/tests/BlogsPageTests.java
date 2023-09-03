@@ -11,7 +11,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Cookie;
-import web.pages.BlogsPage;
 
 import static api.tests.TestBaseApi.credentials;
 import static com.codeborne.selenide.Selenide.open;
@@ -28,7 +27,7 @@ public class BlogsPageTests extends TestBase {
     @Test
     @DisplayName("Successful use filter by Name")
     void usingFilterByName() {
-        new BlogsPage()
+        blogsPage
                 .openBlogsPage()
                 .openFiltersAndSearch()
                 .setValueInFilterByName("Август 2023")
@@ -44,7 +43,7 @@ public class BlogsPageTests extends TestBase {
         getWebDriver().manage().addCookie(new Cookie("xf_user", loginResponse.getToken()));
 
         Integer blogId = 24578;
-        new BlogsPage()
+        blogsPage
                 .openBlog(blogId)
                 .addBlogToFavorite()
                 .checkBlogIsInFavorite();
@@ -62,7 +61,7 @@ public class BlogsPageTests extends TestBase {
         open("");
         getWebDriver().manage().addCookie(new Cookie("xf_user", loginResponse.getToken()));
 
-        new BlogsPage()
+        blogsPage
                 .openBlog(blogId)
                 .deleteBlogFromFavorite()
                 .checkBlogIsNotInFavorite();

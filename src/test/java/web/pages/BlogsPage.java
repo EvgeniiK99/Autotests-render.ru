@@ -10,10 +10,10 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class BlogsPage {
 
-    SelenideElement
+    private final SelenideElement
             filterButton = $(".blog-list__filter__button"),
             closeFilterButton = $(byText("Закрыть фильтры")),
-            fieldFilterByName = $(".blog-list__filter__name").find("input"),
+            inputFilterByName = $(".blog-list__filter__name").find("input"),
             listOfBlogs = $("#packery"),
             favoriteButton = $(".blog-post__toolbar__favorite");
 
@@ -37,14 +37,13 @@ public class BlogsPage {
 
     @Step("Use filter by Name")
     public BlogsPage setValueInFilterByName(String value) {
-        fieldFilterByName.setValue(value);
+        inputFilterByName.setValue(value);
         return this;
     }
 
     @Step("Check Blog in list")
-    public BlogsPage checkBlogInList(String value) {
+    public void checkBlogInList(String value) {
         listOfBlogs.$(byText(value)).shouldBe(visible);
-        return this;
     }
 
     @Step("Open Blog")
@@ -60,9 +59,8 @@ public class BlogsPage {
     }
 
     @Step("Check blog is in favorite")
-    public BlogsPage checkBlogIsInFavorite() {
+    public void checkBlogIsInFavorite() {
         favoriteButton.shouldHave(cssClass("blog-post__toolbar__in-favorites"));
-        return this;
     }
 
     @Step("Delete blog from favorite")
@@ -72,8 +70,7 @@ public class BlogsPage {
     }
 
     @Step("Check blog is not in favorite")
-    public BlogsPage checkBlogIsNotInFavorite() {
+    public void checkBlogIsNotInFavorite() {
         favoriteButton.shouldNotHave(cssClass("blog-post__toolbar__in-favorites"));
-        return this;
     }
 }

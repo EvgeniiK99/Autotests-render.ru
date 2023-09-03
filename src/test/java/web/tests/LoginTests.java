@@ -20,16 +20,16 @@ public class LoginTests extends TestBase {
     @Test
     @Severity(BLOCKER)
     @DisplayName("Successful authorization test")
-    void loginTest() {
+    void successfulLoginTest() {
         mainPage
                 .openMainPage();
-        sidebarPage
+        sidebarComponent
                 .openSidebar()
                 .openLoginWindow()
                 .setEmail(accountData.getEmail())
                 .setPassword(accountData.getPassword())
                 .clickSubmitButton();
-        sidebarPage
+        sidebarComponent
                 .openUserDropdownMenu()
                 .checkUserName("testUser testUser");
     }
@@ -40,7 +40,7 @@ public class LoginTests extends TestBase {
     void errorLoginTest() {
         mainPage
                 .openMainPage();
-        sidebarPage
+        sidebarComponent
                 .openSidebar()
                 .openLoginWindow()
                 .setEmail(accountData.getEmail())
@@ -55,7 +55,7 @@ public class LoginTests extends TestBase {
     void missedPasswordLoginTest() {
         mainPage
                 .openMainPage();
-        sidebarPage
+        sidebarComponent
                 .openSidebar()
                 .openLoginWindow()
                 .setEmail(accountData.getEmail())
@@ -68,7 +68,7 @@ public class LoginTests extends TestBase {
     void missedEmailLoginTest() {
         mainPage
                 .openMainPage();
-        sidebarPage
+        sidebarComponent
                 .openSidebar()
                 .openLoginWindow()
                 .setPassword(accountData.getPassword())

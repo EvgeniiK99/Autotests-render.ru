@@ -14,8 +14,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import web.pages.BlogsPage;
 import web.pages.MainPage;
-import web.pages.SidebarPage;
+import web.pages.SidebarComponent;
 
 import java.util.Map;
 
@@ -23,8 +24,9 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
 
-    SidebarPage sidebarPage = new SidebarPage();
-    MainPage mainPage = new MainPage();
+    public static SidebarComponent sidebarComponent = new SidebarComponent();
+    public static MainPage mainPage = new MainPage();
+    public static BlogsPage blogsPage = new BlogsPage();
 
     public static WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
     public static AccountData accountData = ConfigFactory.create(AccountData.class, System.getProperties());

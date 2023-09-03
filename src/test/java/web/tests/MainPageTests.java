@@ -27,7 +27,7 @@ public class MainPageTests extends TestBase {
     void changeLanguageTests(String language, String languageCode, String header) {
         mainPage
                 .openMainPage();
-        sidebarPage
+        sidebarComponent
                 .openSidebar()
                 .changeLanguage(languageCode)
                 .openSidebar()

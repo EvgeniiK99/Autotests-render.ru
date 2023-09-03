@@ -31,7 +31,7 @@ public class UserProfileApiTests extends TestBaseApi {
         String enText = "Hello! I'm test user!";
         LoginResponseModel loginResponse = AuthorizationApi.login(credentials);
 
-        UserProfileResponseModel userProfileResponse = step("Send request", () ->
+        UserProfileResponseModel userProfileResponse = step("Send change user info request", () ->
                 given(baseRequestWithJsonBodySpec)
                         .header("Cookie", "xf_user=" + loginResponse.getToken())
                         .body(new UserProfileBodyModel(
