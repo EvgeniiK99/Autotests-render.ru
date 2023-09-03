@@ -24,9 +24,9 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
 
-    public static SidebarComponent sidebarComponent = new SidebarComponent();
-    public static MainPage mainPage = new MainPage();
-    public static BlogsPage blogsPage = new BlogsPage();
+    SidebarComponent sidebarComponent = new SidebarComponent();
+    MainPage mainPage = new MainPage();
+    BlogsPage blogsPage = new BlogsPage();
 
     public static WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
     public static AccountData accountData = ConfigFactory.create(AccountData.class, System.getProperties());
