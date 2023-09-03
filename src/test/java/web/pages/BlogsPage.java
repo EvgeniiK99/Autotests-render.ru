@@ -19,7 +19,7 @@ public class BlogsPage {
 
     @Step("Open Blogs page")
     public BlogsPage openBlogsPage() {
-        open("/section");
+        open("/ru/section");
         return this;
     }
 
@@ -48,7 +48,7 @@ public class BlogsPage {
 
     @Step("Open Blog")
     public BlogsPage openBlog(Integer blogId) {
-        open("/blogs/post/" + blogId);
+        open("/ru/blogs/post/" + blogId);
         return this;
     }
 
