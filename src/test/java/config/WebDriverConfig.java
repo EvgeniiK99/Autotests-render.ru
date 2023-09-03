@@ -8,6 +8,7 @@ import static org.aeonbits.owner.Config.*;
         "classpath:${env}.properties"
 })
 public interface WebDriverConfig extends Config {
+
     @Key("baseUrl")
     @DefaultValue("https://render.ru")
     String getBaseUrl();
