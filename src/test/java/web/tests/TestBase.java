@@ -31,17 +31,17 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        RestAssured.baseURI = config.getBaseUrl();
-        RestAssured.basePath = config.getBasePath();
+        RestAssured.baseURI = config.baseUrl();
+        RestAssured.basePath = config.basePath();
 
-        Configuration.baseUrl = config.getBaseUrl();
-        Configuration.browser = config.getBrowser();
-        Configuration.browserSize = config.getBrowserSize();
-        Configuration.browserVersion = config.getBrowserVersion();
+        Configuration.baseUrl = config.baseUrl();
+        Configuration.browser = config.browser();
+        Configuration.browserSize = config.browserSize();
+        Configuration.browserVersion = config.browserVersion();
         Configuration.pageLoadStrategy = "eager";
 
-        if (config.getIsRemote()) {
-            Configuration.remote = config.getRemoteUrl();
+        if (config.isRemote()) {
+            Configuration.remote = config.remoteUrl();
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
@@ -62,7 +62,7 @@ public class TestBase {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-        if (config.getIsRemote()) {
+        if (config.isRemote()) {
             Attach.addVideo();
         }
         closeWebDriver();

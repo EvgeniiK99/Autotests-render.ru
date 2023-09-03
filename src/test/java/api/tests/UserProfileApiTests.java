@@ -19,13 +19,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Owner("Evgenii Klimashin")
 @Severity(CRITICAL)
+@Tag("api")
 @Epic("API_Tests")
 @Feature("User profile")
 public class UserProfileApiTests extends TestBaseApi {
 
     @Test
     @DisplayName("Successful change user info")
-    @Tag("api")
     void successfulChangeUserInfoApiTest() {
         String ruText = "Привет! Я тестовый юзер!";
         String enText = "Hello! I'm test user!";

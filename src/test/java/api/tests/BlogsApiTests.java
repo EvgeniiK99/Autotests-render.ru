@@ -20,12 +20,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @Owner("Evgenii Klimashin")
 @Severity(NORMAL)
+@Tag("api")
 @Epic("API_Tests")
 @Feature("Blogs")
 public class BlogsApiTests extends TestBaseApi {
 
     @Test
-    @Tag("api")
     @DisplayName("Successful add blog to favorite")
     void addBlogToFavoriteApiTest() {
         int blogId = 24615;
@@ -43,7 +43,6 @@ public class BlogsApiTests extends TestBaseApi {
     }
 
     @Test
-    @Tag("api")
     @DisplayName("Successful delete blog from favorite")
     void deleteBlogFromFavoriteApiTest() {
         Integer blogId = 24578;

@@ -11,28 +11,31 @@ public interface WebDriverConfig extends Config {
 
     @Key("baseUrl")
     @DefaultValue("https://render.ru")
-    String getBaseUrl();
+    String baseUrl();
 
     @Key("basePath")
     @DefaultValue("/ru/v1")
-    String getBasePath();
+    String basePath();
 
     @Key("browser")
     @DefaultValue("CHROME")
-    String getBrowser();
+    String browser();
 
     @Key("browserVersion")
     @DefaultValue("100.0")
-    String getBrowserVersion();
+    String browserVersion();
 
     @Key("browserSize")
     @DefaultValue("1920x1080")
-    String getBrowserSize();
+    String browserSize();
 
     @Key("isRemote")
     @DefaultValue("false")
-    Boolean getIsRemote();
+    Boolean isRemote();
 
     @Key("remoteUrl")
-    String getRemoteUrl();
+    String remoteUrl();
+
+    @Key("remoteVideoUrl")
+    String remoteVideoUrl();
 }

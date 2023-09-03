@@ -20,12 +20,12 @@ import static io.qameta.allure.SeverityLevel.NORMAL;
 
 @Owner("Evgenii Klimashin")
 @Severity(NORMAL)
+@Tag("blogs_tests")
 @Epic("UI_Tests")
 @Feature("Blogs page")
 public class BlogsPageTests extends TestBase {
 
     @Test
-    @Tag("blogs_tests")
     @DisplayName("Successful use filter by Name")
     void usingFilterByName() {
         new BlogsPage()
@@ -37,7 +37,6 @@ public class BlogsPageTests extends TestBase {
     }
 
     @Test
-    @Tag("blogs_tests")
     @DisplayName("Successful add blog to favorite")
     void addBlogToFavorite() {
         LoginResponseModel loginResponse = AuthorizationApi.login(credentials);
@@ -54,7 +53,6 @@ public class BlogsPageTests extends TestBase {
     }
 
     @Test
-    @Tag("blogs_tests")
     @DisplayName("Successful delete blog from favorite")
     void deleteBlogFromFavorite() {
         Integer blogId = 24570;

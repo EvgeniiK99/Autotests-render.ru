@@ -15,7 +15,7 @@ public class TestBaseApi {
 
     @BeforeAll
     static void beforeAll() {
-        RestAssured.baseURI = config.getBaseUrl();
-        RestAssured.basePath = config.getBasePath();
+        RestAssured.baseURI = config.baseUrl();
+        RestAssured.basePath = config.basePath();
     }
 }

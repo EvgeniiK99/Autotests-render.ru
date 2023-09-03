@@ -12,12 +12,12 @@ import static io.qameta.allure.SeverityLevel.BLOCKER;
 import static io.qameta.allure.SeverityLevel.MINOR;
 
 @Owner("Evgenii Klimashin")
+@Tag("login_tests")
 @Epic("UI_Tests")
 @Feature("Authorizations")
 public class LoginTests extends TestBase {
 
     @Test
-    @Tag("login_tests")
     @Severity(BLOCKER)
     @DisplayName("Successful authorization test")
     void loginTest() {
@@ -35,7 +35,6 @@ public class LoginTests extends TestBase {
     }
 
     @Test
-    @Tag("login_tests")
     @Severity(BLOCKER)
     @DisplayName("Error authorization test")
     void errorLoginTest() {
@@ -51,7 +50,6 @@ public class LoginTests extends TestBase {
     }
 
     @Test
-    @Tag("login_tests")
     @Severity(BLOCKER)
     @DisplayName("Missed password authorization test")
     void missedPasswordLoginTest() {
@@ -65,7 +63,6 @@ public class LoginTests extends TestBase {
     }
 
     @Test
-    @Tag("login_tests")
     @Severity(MINOR)
     @DisplayName("Missed email authorization test")
     void missedEmailLoginTest() {

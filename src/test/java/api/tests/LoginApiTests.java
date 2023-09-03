@@ -19,13 +19,13 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @Owner("Evgenii Klimashin")
 @Severity(BLOCKER)
+@Tag("api")
 @Epic("API_Tests")
 @Feature("Authorization")
 public class LoginApiTests extends TestBaseApi {
 
     @Test
     @DisplayName("Successful login API test")
-    @Tag("api")
     void successfulLoginApiTest() {
         LoginResponseModel loginResponse = AuthorizationApi.login(credentials);
 
@@ -35,7 +35,6 @@ public class LoginApiTests extends TestBaseApi {
 
     @Test
     @DisplayName("Authentication Failed API test")
-    @Tag("api")
     void unsuccessfulLoginApiTest() {
         ErrorLoginResponseModel errorLoginResponse = step("Send request", () ->
                 given(baseRequestWithJsonBodySpec)
