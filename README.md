@@ -66,9 +66,31 @@ gradle clean test -Denv=local
 ***Удалённый запуск через Jenkins:***
 ```bash  
 clean ${TESTS_TAG}
-"-Denv=remote"
-"-Dbrowser=${BROWSER}"
-"-DbrowserSize=${BROWSER_SIZE}"
+clean
+${TESTS_TAG}
+-Denv=remote
+-Dbrowser=${BROWSER}
+-DbrowserSize=${BROWSER_SIZE}
+-DbrowserVersion=${BROWSER_VERSION}
+-DremoteUrl=https://${REMOTE_DATA}@${REMOTE_URL}/wd/hub
+-DremoteVideoUrl=https://${REMOTE_URL}/video/
+```
+
+***Удалённый запуск Selenoid***
+1. Добавить в resources файл: "remote.properties"
+```bash
+browser=chrome
+browserVersion=100.0
+browserSize=1920x1080
+baseUrl=https://render.ru
+basePath=/ru/v1
+isRemote=true
+remoteUrl=REMOTE_URL
+remoteVideoUrl=VIDEO_URL
+```
+2. Команда для запуска:
+```bash  
+gradle clean test -Denv=remote
 ```
 ___
 <a id="allure"></a>
