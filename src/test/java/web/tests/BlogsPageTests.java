@@ -16,6 +16,7 @@ import static api.tests.TestBaseApi.credentials;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static io.qameta.allure.SeverityLevel.NORMAL;
+import static utils.RandomUtils.getRandomBlogId;
 
 @Owner("Evgenii Klimashin")
 @Severity(NORMAL)
@@ -42,7 +43,7 @@ public class BlogsPageTests extends TestBase {
         open("");
         getWebDriver().manage().addCookie(new Cookie("xf_user", loginResponse.getToken()));
 
-        Integer blogId = 24578;
+        Integer blogId = getRandomBlogId();
         blogsPage
                 .openBlog(blogId)
                 .addBlogToFavorite()
@@ -54,7 +55,7 @@ public class BlogsPageTests extends TestBase {
     @Test
     @DisplayName("Successful delete blog from favorite")
     void deleteBlogFromFavorite() {
-        Integer blogId = 24570;
+        Integer blogId = getRandomBlogId();
 
         LoginResponseModel loginResponse = AuthorizationApi.login(credentials);
         BlogsApi.addBlogToFavorite(loginResponse, blogId);

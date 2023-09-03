@@ -16,6 +16,8 @@ import static io.qameta.allure.Allure.step;
 import static io.qameta.allure.SeverityLevel.CRITICAL;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static utils.RandomUtils.getRandomEnText;
+import static utils.RandomUtils.getRandomRuText;
 
 @Owner("Evgenii Klimashin")
 @Severity(CRITICAL)
@@ -27,8 +29,8 @@ public class UserProfileApiTests extends TestBaseApi {
     @Test
     @DisplayName("Successful change user info")
     void successfulChangeUserInfoApiTest() {
-        String ruText = "Привет! Я тестовый юзер!";
-        String enText = "Hello! I'm test user!";
+        String ruText = getRandomRuText();
+        String enText = getRandomEnText();
         LoginResponseModel loginResponse = AuthorizationApi.login(credentials);
 
         UserProfileResponseModel userProfileResponse = step("Send change user info request", () ->

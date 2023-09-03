@@ -17,6 +17,7 @@ import org.junit.jupiter.api.Test;
 import static io.qameta.allure.Allure.step;
 import static io.qameta.allure.SeverityLevel.*;
 import static org.junit.jupiter.api.Assertions.*;
+import static utils.RandomUtils.getRandomBlogId;
 
 @Owner("Evgenii Klimashin")
 @Severity(NORMAL)
@@ -28,7 +29,8 @@ public class BlogsApiTests extends TestBaseApi {
     @Test
     @DisplayName("Successful add blog to favorite")
     void addBlogToFavoriteApiTest() {
-        int blogId = 24615;
+        int blogId = getRandomBlogId();
+
         LoginResponseModel loginResponse = AuthorizationApi.login(credentials);
         BlogsResponseModel addBlogResponse = BlogsApi.addBlogToFavorite(loginResponse, blogId);
         GetBlogListInFavoriteResponseModel[] getBlogListInFavorite = GetBlogListInFavorite.getBlogListInFavorite(loginResponse);
@@ -45,7 +47,8 @@ public class BlogsApiTests extends TestBaseApi {
     @Test
     @DisplayName("Successful delete blog from favorite")
     void deleteBlogFromFavoriteApiTest() {
-        Integer blogId = 24578;
+        int blogId = getRandomBlogId();
+
         LoginResponseModel loginResponse = AuthorizationApi.login(credentials);
         BlogsApi.addBlogToFavorite(loginResponse, blogId);
         BlogsResponseModel delBlogResponse = BlogsApi.deleteBlogFromFavorite(loginResponse, blogId);
